@@ -141,7 +141,7 @@ for lngth in maxLength:
           #print(model.summary())
           callbacks = [EarlyStopping(monitor='val_loss', patience=10,
                                      verbose=0)]
-          r = model.fit(xtrain, ytrain, epochs=100, verbose=0,
+          r = model.fit(xtrain, ytrain, epochs=500, verbose=0,
                         callbacks=callbacks, validation_data=(xval, yval))
           n_epochs = len(r.history['loss'])
           loss, accuracy, mabserr = model.evaluate(padded_docs, labels,
